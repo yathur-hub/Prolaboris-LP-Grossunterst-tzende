@@ -14,216 +14,221 @@ interface ImpactContext {
   transition: string;
 }
 
-// Configuration Data
+// Focus-specific threshold configuration
+const THRESHOLDS: Record<ImpactFocus, number[]> = {
+  AKUTHILFE: [10000, 100000, 500000, 5000000, 15000000],
+  PRAEVENTION: [7500, 75000, 150000, 1500000, 3000000],
+  SYSTEM: [7500, 75000, 150000, 1500000, 3000000],
+};
+
 const IMPACT_MATRIX: Record<ImpactFocus, Record<VolumeLevel, ImpactContext>> = {
   AKUTHILFE: {
     V1: {
-      headline: "Punktuelle Krisenintervention",
-      description: "Ermöglicht die sofortige Bearbeitung spezifischer Einzelfälle in akuten Belastungssituationen.",
+      headline: "Digitale Erstberatungs-Infrastruktur",
+      description: "Aufbau und Betrieb einer hochverfügbaren, digitalen Anlaufstelle für die erste Triage von Belastungsfällen.",
       dimensions: [
-        "Erstberatung für Einzelpersonen",
-        "Kurzfristige Deeskalation am Arbeitsplatz",
-        "Triage zu spezialisierten Fachstellen"
+        "Kostenlose Erstberatung für bis zu 500 Personen",
+        "Implementierung eines anonymen Hilfe-Portals",
+        "Aufbau eines interdisziplinären Fach-Pools"
       ],
-      systemicClassification: "Sicherung der unmittelbaren Arbeitsfähigkeit in kritischen Momenten.",
-      supporterRole: "Sie fungieren als Impulsgeber für die schnelle Hilfe im Einzelfall.",
-      transition: "Erfahren Sie mehr über unsere operativen Case-Fallzahlen."
+      systemicClassification: "Sicherung der untersten Interventionsschwelle für die gesamte Schweiz.",
+      supporterRole: "Sie sind der Enabler für den digitalen Zugang zu Hilfe.",
+      transition: "Lassen Sie uns über die operative Skalierung sprechen."
     },
     V2: {
-      headline: "Regionale Fallbegleitung",
-      description: "Ihre Unterstützung sichert die Verfügbarkeit professioneller Erstinterventionen über einen definierten Zeitraum.",
+      headline: "Regionale Interventions-Zentren",
+      description: "Finanzierung fester Kapazitäten für tiefgreifende Fallbegleitungen in spezifischen Regionen.",
       dimensions: [
-        "Vertiefte Abklärung komplexer Konfliktlagen",
-        "Einbezug rechtlicher Ersteinschätzungen",
-        "Begleitung bei Wiedereinstiegsprozessen"
+        "Rechtliche und psychologische Begleitung komplexer Fälle",
+        "Schutz vor Kündigung durch frühzeitige Mediation",
+        "Sicherung von bis zu 2'000 Erwerbsbiographien jährlich"
       ],
-      systemicClassification: "Stabilisierung lokaler Arbeitsmarktstrukturen durch Reduktion von Langzeitausfällen.",
-      supporterRole: "Sie ermöglichen eine kontinuierliche Anlaufstelle für Betroffene.",
-      transition: "Gerne erläutern wir Ihnen die Skalierbarkeit dieses Modells."
+      systemicClassification: "Massive Reduktion regionaler Langzeitarbeitslosigkeit durch Krisenintervention.",
+      supporterRole: "Sie sichern professionelle Hilfe dort, wo der Staat keine Ressourcen hat.",
+      transition: "Gerne zeigen wir Ihnen die Case-Management-Erfolge."
     },
     V3: {
-      headline: "Stabile Interventionsstrukturen",
-      description: "Ihre Unterstützung ermöglicht den Aufbau belastbarer Teams, die Betroffene auffangen, bevor Konflikte eskalieren.",
+      headline: "Nationaler Fachstab für Frühintervention",
+      description: "Aufbau eines permanenten, interdisziplinären Expertengremiums zur Begleitung hochkritischer Konfliktlagen.",
       dimensions: [
-        "Strukturierte Erstinterventionen durch qualifizierte Fachpersonen",
-        "Interdisziplinäre Fallbesprechungen (Recht/Psychologie)",
-        "Gezielte Weiterleitung ohne wirtschaftliche Eigeninteressen"
+        "24/7 Notfall-Infrastruktur für Akutfälle",
+        "Publikation von Interventions-Leitfäden für Fachstellen",
+        "Zusammenarbeit mit IV-Stellen zur Prävention von Renten"
       ],
-      systemicClassification: "Frühintervention ist der effektivste Hebel zur Reduktion psychosozialer Ausfälle.",
-      supporterRole: "Sie ermöglichen operative Handlungsfähigkeit dort, wo staatliche Systeme zu spät greifen.",
-      transition: "Gerne zeigen wir Ihnen, wie diese Wirkung konkret umgesetzt wird."
+      systemicClassification: "Schaffung eines nationalen Sicherheitsnetzes unterhalb der Sozialversicherungen.",
+      supporterRole: "Sie ermöglichen operative Exzellenz auf nationaler Ebene.",
+      transition: "Lassen Sie uns die strategische Bedeutung besprechen."
     },
     V4: {
-      headline: "Institutionelle Frühintervention",
-      description: "Sicherung einer flächendeckenden Erreichbarkeit und Professionalisierung der Interventionsprozesse.",
+      headline: "Sektorenübergreifende Interventions-Plattform",
+      description: "Transformation der Akuthilfe in ein KI-gestütztes Vorhersage- und Triage-System für Grossunternehmen und Verbände.",
       dimensions: [
-        "Ausbau der Kapazitäten für Hochrisiko-Branchen",
-        "Integration von Case-Management-Standards",
-        "Wissenschaftliche Begleitung der Interventionserfolge"
-      ],
-      systemicClassification: "Systematischer Schutz von Erwerbsbiographien auf institutioneller Ebene.",
-      supporterRole: "Sie sichern die Qualität und Verfügbarkeit professioneller Hilfe im grossen Stil.",
-      transition: "Lassen Sie uns über die langfristige Sicherung dieser Kapazitäten sprechen."
-    },
-    V5: {
-      headline: "Nationaler Interventions-Standard",
-      description: "Transformation der Akuthilfe in einen anerkannten, flächendeckenden Standard für die Arbeitswelt.",
-      dimensions: [
-        "Aufbau nationaler Kooperationen mit Sozialversicherungen",
-        "Implementierung digitaler Triage-Systeme",
+        "Automatisierte Triage für 50'000+ Nutzer",
+        "Vernetzung mit dem gesamten Schweizer Gesundheitswesen",
         "Sicherung der absoluten Unabhängigkeit gegenüber Arbeitgebern"
       ],
-      systemicClassification: "Transformation der sozialen Sicherungssysteme hin zu proaktiver Hilfe.",
-      supporterRole: "Sie sind strategischer Architekt einer neuen Sicherheitsinfrastruktur.",
-      transition: "Lassen Sie uns über die Vision einer gesunden Arbeitswelt sprechen."
+      systemicClassification: "Präventive Entlastung der Sozialsysteme durch technologische Skalierung.",
+      supporterRole: "Sie sind Architekt einer neuen, effizienten Sicherheits-Infrastruktur.",
+      transition: "Erfahren Sie mehr über unsere technologische Roadmap."
+    },
+    V5: {
+      headline: "Staatlich anerkannter Interventions-Standard",
+      description: "Etablierung von Pro Laboris als die massgebliche, öffentlich-rechtlich anerkannte Instanz für Arbeitswelt-Prävention.",
+      dimensions: [
+        "Flächendeckende Abdeckung für alle Erwerbstätigen der Schweiz",
+        "Integration in die Grundversorgung der Arbeitswelt",
+        "Langfristige Sicherung der unabhängigen Hilfe-Infrastruktur"
+      ],
+      systemicClassification: "Systemwechsel: Von der Reaktion auf Krankheit hin zur Sicherung von Arbeit.",
+      supporterRole: "Sie sichern das Rückgrat einer gesunden Schweizer Arbeitsgesellschaft.",
+      transition: "Lassen Sie uns über die Vision 2030 sprechen."
     }
   },
   PRAEVENTION: {
     V1: {
-      headline: "Sensibilisierungs-Impuls",
-      description: "Ermöglicht die Produktion und Distribution spezifischer Aufklärungsinhalte für Arbeitnehmende.",
+      headline: "Mediale Aufklärungsoffensive",
+      description: "Produktion und Distribution von High-Impact Inhalten zur Entstigmatisierung psychischer Belastungen.",
       dimensions: [
-        "Erstellung von Informationsmaterialien",
-        "Digitale Distribution von Fachinhalten",
-        "Erreichung spezifischer Zielgruppen"
+        "Aufbau einer Wissensplattform für Arbeitnehmende",
+        "Social-Media-Kampagnen zur Früherkennung",
+        "Erreichung von 250'000 Personen in der Pilotphase"
       ],
-      systemicClassification: "Wissensaufbau als Grundlage für Verhaltensänderung.",
-      supporterRole: "Sie ermöglichen den Zugang zu kritischen Informationen.",
+      systemicClassification: "Wissensaufbau als Impuls für kulturellen Wandel.",
+      supporterRole: "Sie geben Betroffenen die Stimme und den Mut, Hilfe zu suchen.",
       transition: "Sehen Sie hier Beispiele unserer Aufklärungsarbeit."
     },
     V2: {
-      headline: "Thematische Fokus-Kampagnen",
-      description: "Gezielte Präventionsarbeit zu Schwerpunktthemen wie Mobbing, Burnout oder destruktive Führung.",
+      headline: "Akademie für gesunde Arbeitswelten",
+      description: "Etablierung eines Schulungssystems für Multiplikatoren (Führungskräfte, Personalräte, Peers).",
       dimensions: [
-        "Durchführung von Webinaren für Betroffene",
-        "Aufbau einer digitalen Wissensdatenbank",
-        "Vernetzung von Multiplikatoren"
+        "Curriculum für 'Mental Health First Aid' am Arbeitsplatz",
+        "Zertifizierung von 500 Präventions-Botschaftern jährlich",
+        "Aufbau eines Experten-Netzwerks"
       ],
-      systemicClassification: "Reduktion von Risikofaktoren durch flächendeckende Information.",
-      supporterRole: "Sie stärken die präventive Resilienz in der Arbeitswelt.",
-      transition: "Gerne präsentieren wir Ihnen unsere Themen-Roadmap."
+      systemicClassification: "Dezentrale Stärkung der Resilienz direkt im Betrieb.",
+      supporterRole: "Sie investieren in das menschliche Wissen als Schutzschild.",
+      transition: "Gerne präsentieren wir Ihnen die Kurs-Inhalte."
     },
     V3: {
-      headline: "Evidenzbasierte Präventionsprogramme",
-      description: "Entwicklung und Umsetzung skalierbarer Programme zur Früherkennung psychischer Belastungen.",
+      headline: "Institutionelle Präventions-Standards",
+      description: "Entwicklung und Rollout von verbindlichen Präventions-Benchmarks für Branchenverbände.",
       dimensions: [
-        "Entwicklung von Assessment-Tools für Betroffene",
-        "Schulung von Vertrauenspersonen in Organisationen",
-        "Langfristige Wissensvermittlung für Führungskräfte"
+        "Erarbeitung des 'Pro Laboris' Gütesiegels",
+        "Implementierung von Feedback-Systemen in Unternehmen",
+        "Jährliche Benchmark-Studien zur Belastungslage"
       ],
-      systemicClassification: "Senkung der Eintrittswahrscheinlichkeit von Krisenfällen durch Früherkennung.",
-      supporterRole: "Sie investieren in das Wissen von morgen, um Ausfälle von heute zu verhindern.",
-      transition: "Lassen Sie uns die Hebelwirkung dieser Programme besprechen."
+      systemicClassification: "Vom Wissen zum messbaren Standard in der Arbeitswelt.",
+      supporterRole: "Sie schaffen die Metriken für gesunde Führung.",
+      transition: "Lassen Sie uns die Hebelwirkung der Standards besprechen."
     },
     V4: {
-      headline: "Strukturelle Präventions-Infrastruktur",
-      description: "Integration von Prävention in die Curricula und Standards der Arbeitswelt.",
+      headline: "Nationale Präventions-Infrastruktur",
+      description: "Großflächige Integration von Prävention in die Aus- und Weiterbildungssysteme der Schweiz.",
       dimensions: [
-        "Zusammenarbeit mit Bildungsinstitutionen",
-        "Aufbau von Zertifizierungen für gesundes Arbeiten",
-        "Monitoring von Präventionserfolgen"
+        "Partnerschaften mit Berufsverbänden und Hochschulen",
+        "Massive Kampagnenpräsenz in der gesamten DACH-Region",
+        "Integration in kantonale Gesundheitsförderungsprogramme"
       ],
       systemicClassification: "Nachhaltige Senkung des volkswirtschaftlichen Schadens durch Prävention.",
-      supporterRole: "Sie ermöglichen die Skalierung von Best Practices.",
-      transition: "Wir zeigen Ihnen gerne unsere Partnerschaften im Bildungssektor."
+      supporterRole: "Sie sind Wegbereiter für ein präventives Bildungssystem.",
+      transition: "Lassen Sie uns über die Skalierungspartner sprechen."
     },
     V5: {
       headline: "Kulturelle Transformation der Arbeitswelt",
-      description: "Massive Verschiebung des Fokus von Reparatur hin zu proaktiver Gesundheitsgestaltung.",
+      description: "Fundamentaler Wandel: Psychische Gesundheit wird zum integralen Bestandteil wirtschaftlichen Erfolgs.",
       dimensions: [
-        "Nationale Kampagnen zur Entstigmatisierung",
-        "Entwicklung neuer Standards für psychische Gesundheit",
-        "Einflussnahme auf die Gestaltung moderner Arbeitswelten"
+        "Einflussnahme auf die nationale Gesetzgebung zur Arbeitswelt",
+        "Etablierung eines neuen Paradigmas der Arbeitsgestaltung",
+        "Dauerhafte Senkung der Burnout-Quoten auf Bevölkerungsebene"
       ],
-      systemicClassification: "Gesellschaftlicher Return on Prevention durch kulturellen Wandel.",
-      supporterRole: "Sie sind Wegbereiter einer zukunftsfähigen Arbeitsgesellschaft.",
-      transition: "Lassen Sie uns über den gesellschaftlichen Impact sprechen."
+      systemicClassification: "Maximaler gesellschaftlicher Return on Prevention.",
+      supporterRole: "Sie sind strategischer Partner einer zukunftsfähigen Gesellschaft.",
+      transition: "Lassen Sie uns über den langfristigen Impact sprechen."
     }
   },
   SYSTEM: {
     V1: {
-      headline: "Datenbasierte Einblicke",
-      description: "Ermöglicht die strukturierte Erfassung anonymer Falldaten zur ersten Analyse.",
+      headline: "Datenbasis & Pilotstudien",
+      description: "Strukturierte Erfassung und Analyse von anonymisierten Falldaten zur Identifikation von Risikoclustern.",
       dimensions: [
-        "Aufbau grundlegender Datenerfassungssysteme",
-        "Anonymisierte Auswertung von Falldaten",
-        "Identifikation erster Risikomuster"
+        "Aufbau der 'Workplace Health' Datenbank",
+        "Analyse von Ursache-Wirkungs-Zusammenhängen",
+        "Erstellung der ersten jährlichen Trendanalyse"
       ],
-      systemicClassification: "Vom Einzelfall zur evidenzbasierten Erkenntnis.",
-      supporterRole: "Sie legen den Grundstein für datenbasierte Prävention.",
+      systemicClassification: "Von Einzelschicksalen zu statistischer Evidenz.",
+      supporterRole: "Sie legen das Fundament für datenbasierte Prävention.",
       transition: "Erfahren Sie mehr über unseren Datenschutz-Standard."
     },
     V2: {
-      headline: "Analytische Kompetenz",
-      description: "Ihre Unterstützung ermöglicht die fachliche Auswertung komplexer Datenzusammenhänge.",
+      headline: "Expertise- & Analyse-Hub",
+      description: "Finanzierung eines Analysestabs zur vertieften Untersuchung systemischer Fehlentwicklungen.",
       dimensions: [
-        "Publikation erster Trendberichte",
-        "Vergleich von Branchenrisiken",
-        "Wissenschaftliche Einordnung der Befunde"
+        "Publikation des 'Schweizer Arbeitswelt-Reports'",
+        "Bereitstellung von Daten für die akademische Forschung",
+        "Identifikation von Branchen-Spezifika (z.B. Pflege, Bau)"
       ],
-      systemicClassification: "Sichtbarmachung systemischer Fehlentwicklungen in der Arbeitswelt.",
-      supporterRole: "Sie schaffen Transparenz in intransparenten Systemen.",
-      transition: "Gerne senden wir Ihnen unseren aktuellen Trendbericht."
+      systemicClassification: "Schaffung von Transparenz über die wahren Kosten der Arbeitswelt.",
+      supporterRole: "Sie geben der Prävention ein wissenschaftliches Rückgrat.",
+      transition: "Gerne senden wir Ihnen unseren aktuellen Bericht."
     },
     V3: {
-      headline: "Unabhängiger Datenhub",
-      description: "Aufbau einer zentralen, unabhängigen Instanz für die Analyse der Schweizer Arbeitswelt.",
+      headline: "Unabhängiger Workplace-Monitor",
+      description: "Aufbau eines dauerhaften, unabhängigen Beobachtungssystems für die Arbeitswelt Schweiz/FL.",
       dimensions: [
-        "Entwicklung proprietärer Analyse-Algorithmen",
-        "Jährlicher 'State of Workplace Health' Report",
-        "Bereitstellung von Daten für die Forschung"
+        "Etablierung eines prädiktiven Warnsystems für Verbände",
+        "Jährliche Verleihung des Workplace Health Awards",
+        "Beratungsmandate für die öffentliche Hand"
       ],
-      systemicClassification: "Systemwissen ist der Hebel für langfristig gesunde Arbeitswelten.",
-      supporterRole: "Sie ermöglichen evidenzbasierte Grundlagen für politische Entscheidungen.",
-      transition: "Lassen Sie uns über die Relevanz unserer Daten sprechen."
+      systemicClassification: "Systemwissen als Hebel für politische und wirtschaftliche Korrekturen.",
+      supporterRole: "Sie ermöglichen eine objektive Instanz über dem Markt.",
+      transition: "Lassen Sie uns über die Relevanz der Daten sprechen."
     },
     V4: {
-      headline: "Prädiktive Analyse-Systeme",
-      description: "Nutzung modernster Technologien zur Vorhersage und Vermeidung systemischer Risiken.",
+      headline: "Predictive AI Research Center",
+      description: "Einsatz von Künstlicher Intelligenz zur Früherkennung systemischer Risiken auf gesamtwirtschaftlicher Ebene.",
       dimensions: [
-        "Einsatz von KI zur Identifikation von Clustern",
-        "Frühwarnsysteme für Branchenverbände",
-        "Interdisziplinärer Austausch auf Expertenebene"
+        "Entwicklung von KI-Modellen zur Burnout-Prävention",
+        "Digitale Früherkennung von Konfliktmustern in Echtzeit",
+        "Globaler Wissensaustausch mit führenden Instituten"
       ],
-      systemicClassification: "Prävention durch datenbasierte Antizipation.",
-      supporterRole: "Sie investieren in die technologische Speerspitze der Prävention.",
+      systemicClassification: "Prävention 4.0: Agieren statt Reagieren durch Technologie.",
+      supporterRole: "Sie finanzieren die technologische Speerspitze der Prävention.",
       transition: "Gerne demonstrieren wir Ihnen unsere Analyse-Tools."
     },
     V5: {
-      headline: "Systemisches Kompetenzzentrum",
-      description: "Positionierung von Pro Laboris als massgebliche Instanz für die Gesundheit am Arbeitsplatz.",
+      headline: "Nationales Kompetenzzentrum für Arbeitswelt-Stabilität",
+      description: "Die massgebliche Instanz, die Wirtschaft, Politik und Gesundheitssystem evidenzbasiert steuert.",
       dimensions: [
-        "Beratung von Politik und Wirtschaft auf Datengrundlage",
-        "Entwicklung nationaler Präventions-Leitlinien",
-        "Sicherung der Datenhoheit für das Gemeinwohl"
+        "Sicherung der Datenhoheit für das Gemeinwohl",
+        "Entwicklung der nationalen Strategie für Arbeitswelt-Resilienz",
+        "Sicherung der absoluten Unabhängigkeit der Präventions-Analyse"
       ],
-      systemicClassification: "Sicherung der langfristigen Systemstabilität durch evidenzbasierte Führung.",
-      supporterRole: "Sie sichern die Unabhängigkeit der kritischen Analyse-Infrastruktur.",
-      transition: "Lassen Sie uns über die strategische Roadmap sprechen."
+      systemicClassification: "Sicherung der langfristigen Stabilität des Wirtschaftsstandorts.",
+      supporterRole: "Sie sind der strategische Architekt der System-Intelligenz.",
+      transition: "Lassen Sie uns über die Roadmap sprechen."
     }
   }
 };
 
 const PreventionSimulator: React.FC = () => {
   const [step, setStep] = useState<1 | 2>(1);
-  const [amount, setAmount] = useState(25000);
   const [focus, setFocus] = useState<ImpactFocus>('AKUTHILFE');
+  const [levelIndex, setLevelIndex] = useState(2); // Start at "Substanziell" (Index 2)
 
-  // Helper to determine volume level
+  const thresholds = THRESHOLDS[focus];
+  const amount = thresholds[levelIndex];
+
   const volumeLevel = useMemo((): VolumeLevel => {
-    if (amount < 5000) return 'V1';
-    if (amount < 10000) return 'V2';
-    if (amount < 25000) return 'V3';
-    if (amount < 50000) return 'V4';
-    return 'V5';
-  }, [amount]);
+    const levels: VolumeLevel[] = ['V1', 'V2', 'V3', 'V4', 'V5'];
+    return levels[levelIndex];
+  }, [levelIndex]);
 
   const currentImpact = useMemo(() => IMPACT_MATRIX[focus][volumeLevel], [focus, volumeLevel]);
 
   const getStep2Headline = () => {
-    if (volumeLevel === 'V1' || volumeLevel === 'V2') return "Fragen zur Wirkung Ihrer Unterstützung?";
-    if (volumeLevel === 'V3' || volumeLevel === 'V4') return "Ihre Unterstützung verdient persönliche Begleitung.";
-    return "Lassen Sie uns über strukturelle Wirkung sprechen.";
+    if (levelIndex <= 1) return "Fragen zur Wirkung Ihrer Investition?";
+    if (levelIndex <= 3) return "Ihre Investition verdient persönliche Begleitung.";
+    return "Lassen Sie uns über strukturelle Transformation sprechen.";
   };
 
   const getFocusLabel = (f: ImpactFocus) => {
@@ -232,19 +237,24 @@ const PreventionSimulator: React.FC = () => {
     return 'Systemaufbau & Datenhub';
   };
 
+  const getLevelLabel = (index: number) => {
+    const labels = ["Einstieg", "Wirksam", "Substanziell", "Systemisch", "Transformativ"];
+    return labels[index];
+  };
+
   if (step === 2) {
     return (
       <section className="bg-white py-16 md:py-32 border-y border-secondary animate-in fade-in duration-700">
         <div className="max-w-4xl mx-auto px-6 text-center">
-          <h3 className="text-[10px] md:text-sm font-bold uppercase tracking-[0.3em] text-dark/40 mb-6 md:mb-8">Persönliche Wirkungsbegleitung</h3>
+          <h3 className="text-[10px] md:text-sm font-bold uppercase tracking-[0.3em] text-dark/40 mb-6 md:mb-8">Strategische Wirkungsbegleitung</h3>
           <h2 className="text-3xl md:text-5xl font-bold mb-8 md:mb-12 leading-tight">
             {getStep2Headline()}
           </h2>
           
           <div className="bg-secondary p-8 md:p-12 text-left border-l-4 border-accent mb-12 md:mb-16">
             <p className="text-lg md:text-xl leading-relaxed text-dark/80">
-              Sie haben sich für eine Unterstützung in der Höhe von <strong>CHF {amount.toLocaleString()}</strong> mit Fokus auf <strong>{getFocusLabel(focus)}</strong> entschieden.
-              Diese Unterstützung entfaltet insbesondere Wirkung im Bereich: <br/>
+              Sie interessieren sich für eine Investition von <strong>CHF {amount.toLocaleString()}</strong> mit Fokus auf <strong>{getFocusLabel(focus)}</strong>.
+              Diese Mittel ermöglichen insbesondere: <br/>
               <span className="italic mt-4 block text-dark/60 text-base md:text-lg">"{currentImpact.description}"</span>
             </p>
           </div>
@@ -264,10 +274,10 @@ const PreventionSimulator: React.FC = () => {
             
             <div className="flex flex-col gap-4 w-full md:w-auto">
               <a 
-                href={`mailto:yathur.nathan@prolaboris.ch?subject=Interesse an Wirkungspartnerschaft: ${getFocusLabel(focus)}&body=Guten Tag Herr Nathan, ich interessiere mich für eine Unterstützung in der Höhe von CHF ${amount.toLocaleString()} mit dem Fokus auf ${getFocusLabel(focus)}.`}
+                href={`mailto:yathur.nathan@prolaboris.ch?subject=Interesse an Impact-Investition: ${getFocusLabel(focus)}&body=Guten Tag Herr Nathan, ich interessiere mich für eine strategische Investition in der Höhe von CHF ${amount.toLocaleString()} mit dem Fokus auf ${getFocusLabel(focus)}.`}
                 className="bg-dark text-white px-8 py-4 font-bold text-center hover:bg-dark/90 transition-all text-sm md:text-base"
               >
-                E-Mail schreiben
+                Dialog aufnehmen
               </a>
               <a 
                 href="tel:+41786754097"
@@ -298,33 +308,33 @@ const PreventionSimulator: React.FC = () => {
           <div className="w-full">
             <h3 className="text-[10px] md:text-sm font-bold uppercase tracking-widest mb-4 opacity-50">RoP™ – Return on Prevention</h3>
             <h2 className="text-3xl md:text-4xl font-bold mb-6 md:mb-8 leading-tight">
-              Was verhindert Ihre <span className="relative inline-block"><span className="relative z-10">Unterstützung</span><span className="absolute bottom-1 left-0 w-full h-2 md:h-3 bg-accent/60 -z-0"></span></span> konkret?
+              Investitions-Simulator für <span className="relative inline-block"><span className="relative z-10">Systemwirkung</span><span className="absolute bottom-1 left-0 w-full h-2 md:h-3 bg-accent/60 -z-0"></span></span>
             </h2>
             <p className="text-base md:text-lg leading-relaxed text-dark/70 mb-10 md:mb-12">
-              Dieser Simulator zeigt, welche präventive Wirkung Ihre Investition entfalten kann. Wir fokussieren auf systemische Stabilität statt auf kurzfristige Reparatur.
+              Dieser Simulator zeigt, welche präventive Infrastruktur Ihre Investition aufbaut. Wir skalieren Wirkung von der Intervention bis zur Transformation.
             </p>
 
             <div className="space-y-10 md:space-y-12">
               <div>
                 <div className="flex justify-between items-end mb-6">
                   <label className="text-[10px] md:text-sm font-bold uppercase tracking-wider text-dark/50">Investitionsvolumen (CHF)</label>
-                  <span className="text-xl md:text-2xl font-bold">CHF {amount.toLocaleString()}</span>
+                  <span className="text-xl md:text-3xl font-black text-dark">CHF {amount.toLocaleString()}</span>
                 </div>
                 <input 
                   type="range" 
-                  min="2500" 
-                  max="100000" 
-                  step="2500" 
-                  value={amount}
-                  onChange={(e) => setAmount(Number(e.target.value))}
-                  className="w-full h-1.5 bg-dark/10 rounded-lg appearance-none cursor-pointer accent-dark"
+                  min="0" 
+                  max="4" 
+                  step="1" 
+                  value={levelIndex}
+                  onChange={(e) => setLevelIndex(Number(e.target.value))}
+                  className="w-full h-2 bg-dark/10 rounded-lg appearance-none cursor-pointer accent-dark"
                 />
-                <div className="flex justify-between mt-4 text-[8px] md:text-[10px] font-bold text-dark/30 uppercase tracking-widest overflow-hidden">
-                  <span className="whitespace-nowrap">Einstieg</span>
-                  <span className="hidden sm:inline whitespace-nowrap">Wirksam</span>
-                  <span className="whitespace-nowrap">Substanziell</span>
-                  <span className="hidden sm:inline whitespace-nowrap">Systemisch</span>
-                  <span className="whitespace-nowrap">Transformativ</span>
+                <div className="flex justify-between mt-4 text-[8px] md:text-[10px] font-black text-dark/30 uppercase tracking-[0.2em]">
+                  {Array.from({length: 5}).map((_, i) => (
+                    <span key={i} className={`transition-colors ${levelIndex === i ? 'text-dark' : ''}`}>
+                      {getLevelLabel(i)}
+                    </span>
+                  ))}
                 </div>
               </div>
 
@@ -353,12 +363,15 @@ const PreventionSimulator: React.FC = () => {
           {/* Result Area */}
           <div className="bg-white p-6 md:p-12 lg:p-16 border-t-8 border-accent shadow-sm lg:sticky lg:top-32 w-full">
             <div className="mb-10 md:mb-12">
-              <h3 className="text-[10px] md:text-sm font-bold uppercase tracking-[0.2em] text-dark/30 mb-4">Wirkungskontext</h3>
+              <div className="flex items-center justify-between mb-4">
+                <h3 className="text-[10px] md:text-sm font-bold uppercase tracking-[0.2em] text-dark/30">Infrastruktur-Impact</h3>
+                <span className="bg-secondary px-3 py-1 text-[10px] font-black uppercase tracking-widest text-dark/60">Level 0{levelIndex + 1}</span>
+              </div>
               <h4 className="text-2xl md:text-4xl font-bold leading-tight mb-4 md:mb-6">{currentImpact.headline}</h4>
               <p className="text-lg md:text-xl text-dark/70 leading-relaxed mb-6 md:mb-8">{currentImpact.description}</p>
               
               <div className="space-y-4 md:space-y-6 mb-8 md:mb-10">
-                <p className="text-[10px] md:text-xs font-bold uppercase tracking-widest text-dark/40">Wirkungsdimensionen</p>
+                <p className="text-[10px] md:text-xs font-bold uppercase tracking-widest text-dark/40">Ziele & Dimensionen</p>
                 <ul className="space-y-3 md:space-y-4">
                   {currentImpact.dimensions.map((dim, i) => (
                     <li key={i} className="flex items-start">
@@ -370,12 +383,12 @@ const PreventionSimulator: React.FC = () => {
               </div>
 
               <div className="p-6 md:p-8 bg-secondary border-l-4 border-dark/10 mb-8 md:mb-10">
-                <p className="text-[10px] md:text-sm font-bold uppercase tracking-widest text-dark/40 mb-2">Systemische Einordnung</p>
+                <p className="text-[10px] md:text-sm font-bold uppercase tracking-widest text-dark/40 mb-2">Systemischer Hebel</p>
                 <p className="text-base md:text-lg italic text-dark/80 font-medium leading-relaxed">"{currentImpact.systemicClassification}"</p>
               </div>
 
               <div className="mb-10 md:mb-12">
-                <p className="text-[10px] md:text-sm font-bold uppercase tracking-widest text-dark/40 mb-2">Ihre Rolle als Unterstützer</p>
+                <p className="text-[10px] md:text-sm font-bold uppercase tracking-widest text-dark/40 mb-2">Ihre Investoren-Rolle</p>
                 <p className="text-base md:text-lg font-bold text-dark">{currentImpact.supporterRole}</p>
               </div>
             </div>
@@ -385,7 +398,7 @@ const PreventionSimulator: React.FC = () => {
                 onClick={() => setStep(2)}
                 className="w-full bg-dark text-white py-4 md:py-6 text-lg md:text-xl font-bold hover:bg-dark/90 transition-all shadow-xl shadow-dark/5 active:scale-[0.98]"
               >
-                Diese Wirkung ermöglichen
+                Investitions-Dialog starten
               </button>
               <p className="text-center mt-4 md:mt-6 text-dark/40 text-xs md:text-sm font-medium italic">
                 {currentImpact.transition}
