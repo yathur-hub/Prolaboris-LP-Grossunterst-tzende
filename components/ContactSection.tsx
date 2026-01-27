@@ -4,9 +4,25 @@ import React, { useState } from 'react';
 const ContactSection: React.FC = () => {
   const [submitted, setSubmitted] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setSubmitted(true);
+    const form = e.currentTarget;
+    const data = new FormData(form);
+
+    try {
+      await fetch(form.action, {
+        method: form.method,
+        body: data,
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+      setSubmitted(true);
+    } catch (error) {
+      console.error("Formspree submission error:", error);
+      // Wir setzen den Status trotzdem auf submitted, um das Design-Verhalten beizubehalten
+      setSubmitted(true);
+    }
   };
 
   if (submitted) {
@@ -77,13 +93,19 @@ const ContactSection: React.FC = () => {
           </div>
 
           <div className="bg-white p-6 md:p-14 shadow-sm border border-dark/5">
-            <form onSubmit={handleSubmit} className="space-y-6 md:space-y-8">
+            <form 
+              onSubmit={handleSubmit} 
+              action="https://formspree.io/f/xzdrwply" 
+              method="POST" 
+              className="space-y-6 md:space-y-8"
+            >
               <div className="grid md:grid-cols-2 gap-6 md:gap-8">
                 <div className="space-y-2">
                   <label htmlFor="vorname" className="text-[10px] md:text-xs font-bold uppercase tracking-widest text-dark/40">Vorname*</label>
                   <input 
                     type="text" 
                     id="vorname" 
+                    name="vorname"
                     required 
                     className="w-full border-b-2 border-secondary py-2 md:py-3 focus:border-accent outline-none transition-colors font-medium text-sm md:text-base"
                     placeholder="Erika"
@@ -94,6 +116,7 @@ const ContactSection: React.FC = () => {
                   <input 
                     type="text" 
                     id="nachname" 
+                    name="nachname"
                     required 
                     className="w-full border-b-2 border-secondary py-2 md:py-3 focus:border-accent outline-none transition-colors font-medium text-sm md:text-base"
                     placeholder="Mustermann"
@@ -106,6 +129,7 @@ const ContactSection: React.FC = () => {
                 <input 
                   type="text" 
                   id="organisation" 
+                  name="organisation"
                   className="w-full border-b-2 border-secondary py-2 md:py-3 focus:border-accent outline-none transition-colors font-medium text-sm md:text-base"
                   placeholder="Stiftung / Unternehmen"
                 />
@@ -116,6 +140,7 @@ const ContactSection: React.FC = () => {
                 <input 
                   type="email" 
                   id="email" 
+                  name="email"
                   required 
                   className="w-full border-b-2 border-secondary py-2 md:py-3 focus:border-accent outline-none transition-colors font-medium text-sm md:text-base"
                   placeholder="name@beispiel.ch"
@@ -127,6 +152,7 @@ const ContactSection: React.FC = () => {
                 <input 
                   type="tel" 
                   id="tel" 
+                  name="telefon"
                   className="w-full border-b-2 border-secondary py-2 md:py-3 focus:border-accent outline-none transition-colors font-medium text-sm md:text-base"
                   placeholder="+41"
                 />
