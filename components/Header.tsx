@@ -20,9 +20,14 @@ const Header: React.FC = () => {
         </div>
         
         <div className="flex items-center space-x-4">
-          <button className="hidden lg:block text-sm font-semibold hover:underline underline-offset-4">
+          <a 
+            href="https://raw.githubusercontent.com/yathur-hub/prolaboris-brandassets/main/260127_ProLaboris_Pitch-Deck%20(3).pdf" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="hidden lg:block text-sm font-semibold hover:underline underline-offset-4"
+          >
             Dossier Download
-          </button>
+          </a>
           <button 
             onClick={scrollToContact}
             className="hidden sm:block bg-accent px-6 py-2.5 text-sm font-bold tracking-wide hover:shadow-lg transition-all active:scale-95"

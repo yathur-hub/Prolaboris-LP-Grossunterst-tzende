@@ -17,9 +17,17 @@ const Hero: React.FC = () => {
           
           {/* Left Column (Primary Focus) */}
           <div className="max-w-3xl">
-            <span className="text-dark/40 text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] block mb-6 md:mb-10">
-              ARBEITSWELT SCHWEIZ & LIECHTENSTEIN
-            </span>
+            <div className="flex items-center gap-4 mb-6 md:mb-10">
+              <span className="text-dark/40 text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] block">
+                ARBEITSWELT SCHWEIZ & LIECHTENSTEIN
+              </span>
+              <div className="h-4 w-px bg-dark/10 hidden sm:block"></div>
+              <img 
+                src="https://raw.githubusercontent.com/yathur-hub/prolaboris-brandassets/main/Lionsclub.png" 
+                alt="Lions Club Logo" 
+                className="h-10 md:h-[50px] w-auto object-contain"
+              />
+            </div>
             
             <h1 className="font-bold leading-[1.1] md:leading-[0.9] tracking-tighter mb-8 md:mb-10">
               <span className="text-6xl sm:text-7xl md:text-9xl block mb-4 bg-gradient-to-r from-dark to-accent bg-clip-text text-transparent">
@@ -55,9 +63,9 @@ const Hero: React.FC = () => {
             </div>
           </div>
 
-          {/* Right Column (Secondary Focus) */}
-          <div className="space-y-4 md:space-y-6 pt-0 lg:pt-40">
-            <div className="bg-secondary p-8 md:p-10 border-t border-dark/5 shadow-sm">
+          {/* Right Column (Secondary Focus - Boxes now higher up) */}
+          <div className="space-y-4 md:space-y-6 pt-0 lg:pt-4">
+            <div className="bg-secondary p-8 md:p-10 border-t border-dark/5 shadow-sm w-full">
               <p className="text-4xl md:text-5xl font-bold mb-2 md:mb-3 tracking-tight">1+ Mrd. CHF</p>
               <p className="text-base md:text-lg font-semibold leading-tight text-dark/80 mb-4">
                 Volkswirtschaftliche Kosten durch psychisch bedingte Ausfälle
@@ -67,7 +75,7 @@ const Hero: React.FC = () => {
               </p>
             </div>
             
-            <div className="bg-secondary p-8 md:p-10 border-t border-dark/5 shadow-sm">
+            <div className="bg-secondary p-8 md:p-10 border-t border-dark/5 shadow-sm w-full">
               <p className="text-4xl md:text-5xl font-bold mb-2 md:mb-3 tracking-tight">17 %</p>
               <p className="text-base md:text-lg font-semibold leading-tight text-dark/80">
                 der Erwerbstätigen betroffen pro Jahr
@@ -75,6 +83,10 @@ const Hero: React.FC = () => {
               <p className="text-[10px] text-dark/40 uppercase font-bold tracking-widest mt-4 md:mt-6">
                 psychisch bedingte Ausfälle
               </p>
+            </div>
+
+            <div className="p-4 border border-dashed border-dark/10 rounded-sm opacity-50">
+              <p className="text-[10px] font-bold uppercase tracking-widest text-dark/60 text-center">Unabhängig & Philanthropisch finanziert</p>
             </div>
           </div>
 
